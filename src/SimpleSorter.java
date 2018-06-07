@@ -13,6 +13,11 @@ public static void main(String[] args) {
 	
 	if (ans<ans2&&ans<ans3) {
 		System.out.println(ans);
+		if(ans2<ans3) {
+			System.out.println(ans2);
+		if(ans3<ans2) {System.out.println(ans3);
+		}
+		}
 	}
 }
 }
