@@ -18,21 +18,31 @@ public class HappyPet {
 		// pet happy
 		// (eg: cuddle, food, water, take a walk, groom, clean up poop).
 		// Make sure to customize the title and question too.
-		int task = JOptionPane.showOptionDialog(null, "What do you want to do to make your pet happy?", "Title", 0,
-				JOptionPane.INFORMATION_MESSAGE, null, new String[] { "cuddle", "walk", "groom" }, null);
+		for (int i = 0; i < 2;i++) {
 
+			int task = JOptionPane.showOptionDialog(null, "What do you want to do to make your pet happy?", "Title", 0,
+					JOptionPane.INFORMATION_MESSAGE, null, new String[] { "cuddle", "walk", "groom" }, null);
+		
 		// 5. Use user input to call the appropriate method created in step 4.
 		System.out.println(task);
 		if (task == 1) {
 			walk();
-			// 6. If you determine the happiness level is large enough, tell the
-			// user that he loves his pet and use break; to exit for loop.
+
 		}
 		if (task == 0) {
 			cuddle();
 		}
 		if (task == 2) {
 			groom();
+		}
+	
+		
+		// 6. If you determine the happiness level is large enough, tell the
+		// user that he loves his pet and use break; to exit for loop.
+		if (happynesslevel >= 20) {
+			JOptionPane.showMessageDialog(null, "You love your pet");
+			break;
+		}
 		}
 	}
 
@@ -51,7 +61,7 @@ public class HappyPet {
 	}
 
 	static void groom() {
-		happynesslevel = happynesslevel + 100000;
+		happynesslevel = happynesslevel + 15;
 		JOptionPane.showMessageDialog(null, "animal sound");
 	}
 }
